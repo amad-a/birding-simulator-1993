@@ -12,7 +12,7 @@ let shotCoords,
   mirroredCoords = [0, 0];
 let screenWidth = 1280;
 let screenHeight = 960;
-let currentScreen = 0;
+let currentScreen = 2;
 let backgrounds;
 let cardinalDirections;
 let modelLoaded = false;
@@ -22,45 +22,129 @@ let savedTime;
 let totalTime = 1000;
 let cameraSound;
 
+// const screens = [
+//   {
+//     id: 0,
+//     url: '0.png',
+//     arrows: [
+//       { direction: 'w', x: 60, y: 450, screen: 1 },
+//       { direction: 'e', x: screenWidth - 180, y: 450, screen: 2 },
+//     ],
+//   },
+//   {
+//     id: 1,
+//     url: '1.png',
+//     arrows: [
+//       { direction: 'w', x: 60, y: 450, screen: 2 },
+//       { direction: 'e', x: screenWidth - 180, y: 450, screen: 0 },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     url: '2.png',
+//     arrows: [
+//       { direction: 'w', x: 60, y: 450, screen: 0 },
+//       { direction: 'e', x: screenWidth - 180, y: 450, screen: 1 },
+//     ],
+//   },
+//   {
+//     id: 3,
+//     url: '3.png',
+//     arrows: [
+//       { direction: 'ne', x: 100, y: 100, screen: 2 },
+//       { direction: 'w', x: 100, y: 100, screen: 1 },
+//     ],
+//   },
+//   {
+//     id: 4,
+//     url: '4.png',
+//     arrows: [
+//       { direction: 'ne', x: 100, y: 100, screen: 1 },
+//       { direction: 'w', x: 100, y: 100, screen: 3 },
+//     ],
+//   },
+// ];
+
 const screens = [
   {
     id: 0,
-    url: '0.png',
     arrows: [
-      { direction: 'w', x: 40, y: 450, screen: 1 },
-      { direction: 'e', x: screenWidth - 160, y: 450, screen: 2 },
+      { direction: 'w', x: 60, y: 450, screen: 7 },
+      { direction: 'e', x: screenWidth - 180, y: 450, screen: 11 },
     ],
   },
   {
     id: 1,
-    url: '1.png',
-    arrows: [
-      { direction: 'w', x: 40, y: 450, screen: 2 },
-      { direction: 'e', x: screenWidth - 160, y: 450, screen: 0 },
-    ],
+    arrows: [{ direction: 'w', x: 60, y: 450, screen: 2 }],
   },
   {
     id: 2,
-    url: '2.png',
     arrows: [
-      { direction: 'w', x: 40, y: 450, screen: 0 },
-      { direction: 'e', x: screenWidth - 160, y: 450, screen: 1 },
+      { direction: 'w', x: 60, y: 450, screen: 3 },
+      { direction: 'e', x: screenWidth - 180, y: 450, screen: 1 },
     ],
   },
   {
     id: 3,
-    url: '3.png',
     arrows: [
-      { direction: 'ne', x: 100, y: 100, screen: 2 },
-      { direction: 'w', x: 100, y: 100, screen: 1 },
+      { direction: 'ne', x: 650, y: 500, screen: 10 },
+      { direction: 'sw', x: 450, y: screenHeight - 150, screen: 2 },
     ],
   },
   {
     id: 4,
-    url: '4.png',
     arrows: [
-      { direction: 'ne', x: 100, y: 100, screen: 1 },
-      { direction: 'w', x: 100, y: 100, screen: 3 },
+      { direction: 'w', x: 60, y: 450, screen: 9 },
+      { direction: 'e', x: screenWidth - 180, y: 450, screen: 10 },
+      { direction: 'n', x: 600, y: 40, screen: 5 },
+    ],
+  },
+  {
+    id: 5,
+    arrows: [
+      { direction: 's', x: 600, y: screenHeight - 160, screen: 4 },
+    ],
+  },
+  {
+    id: 6,
+    arrows: [{ direction: 'w', x: 60, y: 450, screen: 10 }],
+  },
+  {
+    id: 7,
+    arrows: [
+      { direction: 'e', x: screenWidth - 180, y: 450, screen: 0 },
+    ],
+  },
+  {
+    id: 8,
+    arrows: [{ direction: 'sw', x: 60, y: 450, screen: 11 }],
+  },
+  {
+    id: 9,
+    arrows: [
+      { direction: 's', x: 600, y: screenHeight - 160, screen: 4 },
+      {
+        direction: 'nw',
+        x: 475,
+        y: 500,
+        screen: 11,
+      },
+    ],
+  },
+  {
+    id: 10,
+    arrows: [
+      { direction: 'w', x: 60, y: 450, screen: 4 },
+      { direction: 's', x: 600, y: screenHeight - 160, screen: 3 },
+      { direction: 'e', x: screenWidth - 180, y: 450, screen: 6 },
+    ],
+  },
+  {
+    id: 11,
+    arrows: [
+      { direction: 's', x: 600, y: screenHeight - 160, screen: 9 },
+      { direction: 'w', x: 60, y: 450, screen: 0 },
+      { direction: 'ne', x: screenWidth - 180, y: 450, screen: 8 },
     ],
   },
 ];
@@ -77,6 +161,7 @@ function preload() {
     se: loadImage('images/arrows/se.png'),
     sw: loadImage('images/arrows/sw.png'),
     w: loadImage('images/arrows/w.png'),
+    prev: loadImage('images/arrows/prev.png'),
   };
 
   camera = loadImage('images/cameraTransparent2.png');
@@ -94,9 +179,16 @@ function preload() {
     2: loadImage('images/screens/2.png'),
     3: loadImage('images/screens/3.png'),
     4: loadImage('images/screens/4.png'),
+    5: loadImage('images/screens/5.png'),
+    6: loadImage('images/screens/6.png'),
+    7: loadImage('images/screens/7.png'),
+    8: loadImage('images/screens/8.png'),
+    9: loadImage('images/screens/9.png'),
+    10: loadImage('images/screens/10.png'),
+    11: loadImage('images/screens/11.png'),
   };
 
-  cameraSound = loadSound('sounds/snapshot_sound.mp3');
+  cameraSound = loadSound('sounds/snapshot.mp3');
   grassSound = loadSound('sounds/grass.mp3');
   font = loadFont('fonts/garamond-italic-sp.ttf');
 }
@@ -183,7 +275,7 @@ function overlapArrows() {
         arrow.y,
         arrowGraphic.width * 2.5,
         arrowGraphic.height * 2.5
-      ) > 90
+      ) > 50
     ) {
       hoveredArrow = arrow;
     }
