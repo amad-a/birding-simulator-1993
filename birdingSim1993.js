@@ -28,7 +28,7 @@ let cameraSound;
 //     url: '0.png',
 //     arrows: [
 //       { direction: 'w', x: 60, y: 450, screen: 1 },
-//       { direction: 'e', x: screenWidth - 180, y: 450, screen: 2 },
+//       { direction: 'e', x: screenWidth - 185, y: 450, screen: 2 },
 //     ],
 //   },
 //   {
@@ -36,7 +36,7 @@ let cameraSound;
 //     url: '1.png',
 //     arrows: [
 //       { direction: 'w', x: 60, y: 450, screen: 2 },
-//       { direction: 'e', x: screenWidth - 180, y: 450, screen: 0 },
+//       { direction: 'e', x: screenWidth - 185, y: 450, screen: 0 },
 //     ],
 //   },
 //   {
@@ -44,7 +44,7 @@ let cameraSound;
 //     url: '2.png',
 //     arrows: [
 //       { direction: 'w', x: 60, y: 450, screen: 0 },
-//       { direction: 'e', x: screenWidth - 180, y: 450, screen: 1 },
+//       { direction: 'e', x: screenWidth - 185, y: 450, screen: 1 },
 //     ],
 //   },
 //   {
@@ -70,7 +70,7 @@ const screens = [
     id: 0,
     arrows: [
       { direction: 'w', x: 60, y: 450, screen: 7 },
-      { direction: 'e', x: screenWidth - 180, y: 450, screen: 11 },
+      { direction: 'e', x: screenWidth - 185, y: 450, screen: 11 },
     ],
   },
   {
@@ -81,7 +81,7 @@ const screens = [
     id: 2,
     arrows: [
       { direction: 'w', x: 60, y: 450, screen: 3 },
-      { direction: 'e', x: screenWidth - 180, y: 450, screen: 1 },
+      { direction: 'e', x: screenWidth - 185, y: 450, screen: 1 },
     ],
   },
   {
@@ -95,7 +95,7 @@ const screens = [
     id: 4,
     arrows: [
       { direction: 'w', x: 60, y: 450, screen: 9 },
-      { direction: 'e', x: screenWidth - 180, y: 450, screen: 10 },
+      { direction: 'e', x: screenWidth - 185, y: 450, screen: 10 },
       { direction: 'n', x: 600, y: 40, screen: 5 },
     ],
   },
@@ -112,7 +112,7 @@ const screens = [
   {
     id: 7,
     arrows: [
-      { direction: 'e', x: screenWidth - 180, y: 450, screen: 0 },
+      { direction: 'e', x: screenWidth - 185, y: 450, screen: 0 },
     ],
   },
   {
@@ -136,7 +136,7 @@ const screens = [
     arrows: [
       { direction: 'w', x: 60, y: 450, screen: 4 },
       { direction: 's', x: 600, y: screenHeight - 160, screen: 3 },
-      { direction: 'e', x: screenWidth - 180, y: 450, screen: 6 },
+      { direction: 'e', x: screenWidth - 185, y: 450, screen: 6 },
     ],
   },
   {
@@ -144,7 +144,7 @@ const screens = [
     arrows: [
       { direction: 's', x: 600, y: screenHeight - 160, screen: 9 },
       { direction: 'w', x: 60, y: 450, screen: 0 },
-      { direction: 'ne', x: screenWidth - 180, y: 450, screen: 8 },
+      { direction: 'ne', x: screenWidth - 185, y: 450, screen: 8 },
     ],
   },
 ];
