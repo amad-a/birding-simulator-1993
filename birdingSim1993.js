@@ -12,7 +12,7 @@ let shotCoords,
   mirroredCoords = [0, 0];
 let screenWidth = 1280;
 let screenHeight = 960;
-let currentScreen = 8;
+let currentScreen = 2;
 let backgrounds;
 let cardinalDirections;
 let modelLoaded = false;
