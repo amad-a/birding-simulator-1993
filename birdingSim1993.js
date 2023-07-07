@@ -593,11 +593,10 @@ function renderGameOver() {
   text('GAME OVER!', screenWidth / 2 - 325, screenHeight / 2);
   fill(255);
   text('GAME OVER!', screenWidth / 2 - 335, screenHeight / 2);
+  noLoop();
 
   const uniqueBirds = removeDuplicatesByPropertyName(capturedBirds);
   renderBirdLinks(uniqueBirds);
-
-  noLoop();
 }
 
 function renderLoading() {
