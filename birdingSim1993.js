@@ -595,6 +595,8 @@ function renderGameOver() {
   text('GAME OVER!', screenWidth / 2 - 335, screenHeight / 2);
 
   const uniqueBirds = removeDuplicatesByPropertyName(capturedBirds);
+  renderBirdLinks(uniqueBirds);
+
   noLoop();
 }
 
@@ -787,4 +789,37 @@ function removeDuplicatesByPropertyName(arr) {
   const uniqueArr = Object.values(uniqueObjects);
 
   return uniqueArr;
+}
+
+function renderBirdLinks(birds) {
+  let div;
+
+  // Find the div element by its ID
+  div = select('#birdLinks');
+
+  // Create a new ul element
+  let ul = createElement('ul');
+
+  // Loop through the birds array
+  for (let i = 0; i < birds.length; i++) {
+    let bird = birds[i];
+
+    // Create a new li element
+    let li = createElement('li');
+
+    // Create a new anchor element
+    let a = createA(bird.link, bird.name);
+
+    // Set the anchor's attributes
+    a.attribute('target', '_blank'); // Open link in a new tab
+
+    // Append the anchor to the li
+    a.parent(li);
+
+    // Append the li to the ul
+    li.parent(ul);
+  }
+
+  // Append the ul to the div
+  ul.parent(div);
 }

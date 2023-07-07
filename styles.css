@@ -32,4 +32,35 @@ canvas {
     padding: 20px;
     text-align: center;
   }
+  
+  .birdsList {
+    position: absolute;
+    font-family: serif;
+    font-size: 50px;
+    
+    left: 50%;
+    top: 110%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    text-align: center;
+}
 
+li {
+    list-style-type: none;
+    font-size: 50px;
+}
+
+a:link {
+    color: black;
+
+}
+
+a:visited {
+color: black;
+}
+
+a:hover {
+font-style: italic;
+}
