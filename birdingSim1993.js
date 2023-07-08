@@ -744,6 +744,27 @@ function keyPressed() {
   }
 }
 
+function touchStarted() {
+  if (modelLoaded) {
+    if (overlapArrows()) {
+      let currentArrow = overlapArrows();
+      currentScreen = currentArrow.screen;
+      volume = Math.min(12, volume + 2);
+
+      grassSound.play();
+      return false;
+    } else {
+      birdDetected();
+      shots -= 1;
+      shotCoords = currentCoords;
+      volume = Math.min(12, volume + 4);
+
+      cameraSound.play();
+      return false;
+    }
+  }
+}
+
 function calculateOverlap(x2, y2, w2, h2) {
   let x1 = currentCoords[0];
   let y1 = currentCoords[1];
