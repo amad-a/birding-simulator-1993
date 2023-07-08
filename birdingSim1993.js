@@ -1,4 +1,5 @@
 let handpose;
+let cnv;
 let video;
 let volume = 0;
 let hands = [];
@@ -542,7 +543,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(screenWidth, screenHeight);
+  cnv = createCanvas(screenWidth, screenHeight);
+  cnv.mousePressed(registerTouch);
   savedTime = millis();
 
   video = createCapture(VIDEO);
@@ -744,7 +746,7 @@ function keyPressed() {
   }
 }
 
-function touchStarted() {
+function registerTouch() {
   if (modelLoaded) {
     if (overlapArrows()) {
       let currentArrow = overlapArrows();

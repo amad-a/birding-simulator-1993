@@ -22,6 +22,18 @@
     height: 480px;
 }
 
+.intro {
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+ 
+}
+
 canvas {
     position: absolute;
     left: 50%;
@@ -63,4 +75,18 @@ color: black;
 
 a:hover {
 font-style: italic;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 50px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+button {
+    padding: 15px 32px;
+    font-size: 2rem;
 }
