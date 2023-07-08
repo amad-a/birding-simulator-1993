@@ -3,7 +3,6 @@ let video;
 let volume = 8;
 let hands = [];
 let lastHands = [];
-let simpleShader;
 let camera;
 let font;
 let shots = 24;
