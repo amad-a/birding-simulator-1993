@@ -517,6 +517,7 @@ function preload() {
     egretXl: loadImage('images/birds/200/egretSitting.png'),
   };
 
+  camera = loadImage('images/cameraTransparent2.png');
   roll = loadImage('images/35mmrollSharp.png');
   pointer = loadImage('images/pointer.png');
 
