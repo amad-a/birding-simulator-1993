@@ -1,6 +1,6 @@
 let handpose;
 let video;
-let volume = 8;
+let volume = 0;
 let hands = [];
 let lastHands = [];
 let camera;
@@ -36,7 +36,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/wood_duck',
         x: 600,
         y: 500,
-        chance: 8,
+        chance: 10,
       },
       {
         bird: 'osprey2S',
@@ -44,7 +44,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/osprey',
         x: 100,
         y: 100,
-        chance: 8,
+        chance: 10,
       },
       {
         bird: 'crowFlyingS',
@@ -52,7 +52,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/American_Crow/',
         x: 1000,
         y: 150,
-        chance: 8,
+        chance: 10,
       },
     ],
   },
@@ -66,7 +66,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Herring_Gull',
         x: 300,
         y: 600,
-        chance: 1,
+        chance: 3,
       },
       {
         bird: 'brantS',
@@ -74,7 +74,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/brant',
         x: 850,
         y: 600,
-        chance: 3,
+        chance: 5,
       },
       {
         bird: 'woodDuckS',
@@ -82,7 +82,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/wood_duck',
         x: 100,
         y: 600,
-        chance: 6,
+        chance: 8,
       },
       {
         bird: 'hudsonianGodwitS',
@@ -90,7 +90,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/hudsonian_godwit',
         x: 300,
         y: 550,
-        chance: 5,
+        chance: 7,
       },
       {
         bird: 'blueHeronFlyingS',
@@ -131,7 +131,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/house_sparrow',
         x: 800,
         y: 620,
-        chance: 4,
+        chance: 6,
       },
       {
         bird: 'houseSparrowS',
@@ -139,7 +139,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/house_sparrow',
         x: 900,
         y: 610,
-        chance: 4,
+        chance: 6,
       },
       {
         bird: 'europeanStarlingS',
@@ -147,7 +147,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/european_starling',
         x: 200,
         y: 660,
-        chance: 3,
+        chance: 5,
       },
     ],
   },
@@ -164,7 +164,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Great_Egret/',
         x: 800,
         y: 300,
-        chance: 4,
+        chance: 6,
       },
     ],
   },
@@ -182,7 +182,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Great_Blue_Heron/',
         x: 500,
         y: 300,
-        chance: 4,
+        chance: 6,
       },
       {
         bird: 'beltedKingfisherS',
@@ -190,7 +190,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Belted_Kingfisher',
         x: 200,
         y: 600,
-        chance: 2,
+        chance: 4,
       },
     ],
   },
@@ -207,7 +207,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Red-winged_Blackbird',
         x: 550,
         y: 100,
-        chance: 4,
+        chance: 6,
       },
       {
         bird: 'northernCardinalS',
@@ -215,7 +215,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Northern_Cardinal',
         x: 900,
         y: 300,
-        chance: 2,
+        chance: 4,
       },
       {
         bird: 'europeanStarlingS',
@@ -223,7 +223,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/european_starling',
         x: 850,
         y: 500,
-        chance: 6,
+        chance: 8,
       },
       {
         bird: 'houseSparrowS',
@@ -231,7 +231,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/house_sparrow',
         x: 550,
         y: 500,
-        chance: 8,
+        chance: 10,
       },
     ],
   },
@@ -243,24 +243,24 @@ const screens = [
         bird: 'mourningDoveXL',
         name: 'Mourning Dove',
         link: 'https://www.allaboutbirds.org/guide/Mourning_Dove',
-        x: 100,
+        x: 150,
         y: 100,
-        chance: 2,
+        chance: 4,
       },
       {
         bird: 'greatBlueHeron2M',
         name: 'Great Blue Heron',
         link: 'https://www.allaboutbirds.org/guide/Great_Blue_Heron/',
-        x: 200,
-        y: 200,
-        chance: 4,
+        x: 900,
+        y: 600,
+        chance: 6,
       },
       {
         bird: 'americanWhitePelicanS',
         name: 'American White Pelican',
         link: 'https://www.allaboutbirds.org/guide/American_White_Pelican',
-        x: 300,
-        y: 300,
+        x: 800,
+        y: 200,
         chance: 8,
       },
     ],
@@ -277,7 +277,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Great_Blue_Heron/',
         x: 120,
         y: 100,
-        chance: 6,
+        chance: 8,
       },
       {
         bird: 'egretS',
@@ -285,7 +285,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Great_Egret/',
         x: 850,
         y: 450,
-        chance: 4,
+        chance: 6,
       },
     ],
   },
@@ -299,7 +299,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/American_White_Pelican',
         x: 600,
         y: 100,
-        chance: 8,
+        chance: 10,
       },
       {
         bird: 'monkParakeetS',
@@ -307,7 +307,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Monk_Parakeet',
         x: 480,
         y: 400,
-        chance: 2,
+        chance: 4,
       },
       {
         bird: 'northernCardinalS',
@@ -315,7 +315,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Northern_Cardinal',
         x: 300,
         y: 650,
-        chance: 4,
+        chance: 6,
       },
       {
         bird: 'americanCrow1S',
@@ -323,7 +323,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/american_crow',
         x: 900,
         y: 360,
-        chance: 6,
+        chance: 8,
       },
     ],
   },
@@ -345,7 +345,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/american_crow',
         x: 100,
         y: 520,
-        chance: 2,
+        chance: 4,
       },
       {
         bird: 'snowEgretM',
@@ -353,7 +353,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Snowy_Egret',
         x: 650,
         y: 300,
-        chance: 4,
+        chance: 6,
       },
     ],
   },
@@ -371,7 +371,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Monk_Parakeet',
         x: 100,
         y: 100,
-        chance: 4,
+        chance: 6,
       },
       {
         bird: 'leastBitternM',
@@ -379,7 +379,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Least_Bittern',
         x: 1000,
         y: 700,
-        chance: 2,
+        chance: 4,
       },
       {
         bird: 'snowEgretFlyingS',
@@ -387,7 +387,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Snowy_Egret',
         x: 750,
         y: 700,
-        chance: 6,
+        chance: 8,
       },
     ],
   },
@@ -405,7 +405,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Brant',
         x: 850,
         y: 750,
-        chance: 2,
+        chance: 4,
       },
       {
         bird: 'greatBlueHeronXL',
@@ -413,7 +413,7 @@ const screens = [
         link: 'https://www.allaboutbirds.org/guide/Great_Blue_Heron/',
         x: 200,
         y: 600,
-        chance: 2,
+        chance: 4,
       },
       // {
       //   bird: 'egretXl',
@@ -737,7 +737,7 @@ function keyPressed() {
       birdDetected();
       shots -= 1;
       shotCoords = currentCoords;
-      volume = Math.min(12, volume + 6);
+      volume = Math.min(12, volume + 4);
 
       cameraSound.play();
     }
